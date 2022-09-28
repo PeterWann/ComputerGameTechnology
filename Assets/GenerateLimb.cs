@@ -8,6 +8,7 @@ public class GenerateLimb : MonoBehaviour
 
     public Rigidbody rb;
     public GameObject startingLimb;
+    public MeshCollider meshCollider;
     public Mesh[] limbMeshes = new Mesh[8];
     private GameObject player;
     private int limbAmount;
@@ -30,6 +31,7 @@ public class GenerateLimb : MonoBehaviour
         limbMesh = startingLimb.GetComponent<MeshFilter>();
 
         limbMesh.sharedMesh = limbMeshes[limbAmount];
+        meshCollider.sharedMesh = limbMeshes[limbAmount];
     }
 
     void ShootLimb()

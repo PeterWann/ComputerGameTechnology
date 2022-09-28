@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b32c20f08749504883c676986ef3533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limbSpeed: 25
+  limbSpeed: 20
   rb: {fileID: 7281246393891885394}
   startingLimb: {fileID: 1189722406009243283}
+  meshCollider: {fileID: -4169626432884906820}
   limbMeshes:
   - {fileID: -2726511061174768897, guid: 7c3def2ffe59b614686d1ece22f03ba9, type: 3}
   - {fileID: -3558348549138793661, guid: 7c3def2ffe59b614686d1ece22f03ba9, type: 3}
@@ -138,5 +139,5 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: -5397934657734002582, guid: 7c3def2ffe59b614686d1ece22f03ba9, type: 3}
