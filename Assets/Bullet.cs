@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
     #region Choose Limb To Shoot
     void ChooseLimb()
     {
+        Debug.Log("Test");
         // Get Current Amount Of Limbs
         int amount = player.GetComponent<BodyAndLimbs>().limbAmount;
 

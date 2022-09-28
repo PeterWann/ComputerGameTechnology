@@ -59,8 +59,6 @@ public class Shoot : MonoBehaviour
         {
             player.GetComponent<BodyParts>().DecreaseParts();
 
-            Debug.Log(player.GetComponent<BodyParts>().AmountBodyParts());
-
             playerMesh.GetComponent<MeshController>().ChangeMesh(player.GetComponent<BodyParts>().AmountBodyParts());
         }
     }
@@ -69,7 +67,6 @@ public class Shoot : MonoBehaviour
     {
         int partsLeft = player.GetComponent<BodyParts>().AmountBodyParts();
 
-        Debug.Log(partsLeft);
         playerMesh.GetComponent<MeshController>().ChangeMesh(partsLeft);
     }
 

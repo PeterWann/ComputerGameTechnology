@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7281246393891885392}
   - component: {fileID: 7281246393891885397}
   - component: {fileID: 7281246393891885394}
-  - component: {fileID: 7281246393891885396}
+  - component: {fileID: -4169626432884906820}
   m_Layer: 0
   m_Name: Limb
   m_TagString: Untagged
@@ -124,10 +124,10 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 120
+  m_Constraints: 8
   m_CollisionDetection: 1
---- !u!65 &7281246393891885396
-BoxCollider:
+--- !u!64 &-4169626432884906820
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,6 +136,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3465628, y: 0.16668504, z: 0.16491795}
-  m_Center: {x: -0.11696866, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5397934657734002582, guid: 7c3def2ffe59b614686d1ece22f03ba9, type: 3}
