@@ -13,7 +13,7 @@ public class Spider : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         Instantiate(splat, splat.transform.position, splat.transform.rotation);
         Object.Destroy(spider);

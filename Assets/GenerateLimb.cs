@@ -5,6 +5,7 @@ using UnityEngine;
 public class GenerateLimb : MonoBehaviour
 {
     public float limbSpeed = 10f;
+    public float limbMass = 20f;
 
     public Rigidbody rb;
     public GameObject startingLimb;
@@ -36,6 +37,14 @@ public class GenerateLimb : MonoBehaviour
 
     void ShootLimb()
     {
+        rb.mass = limbMass;
         rb.velocity = transform.right * limbSpeed;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        AudioManager.Instance.PlayOnce("LimbHit");
+    }
+
+
 }

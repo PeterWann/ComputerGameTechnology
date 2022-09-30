@@ -1,26 +1,8 @@
 fileFormatVersion: 2
-guid: 6816b9ac7d5bdf24c975f4aa37952d2b
+guid: afdfbc5f4d866a74faaca64dedbaa5fb
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable:
-  - first:
-      74: -3728857700102270960
-    second: LowerArm|LowerLegAction
-  - first:
-      74: -842729588264101772
-    second: LowerArm|UpperLegAction
-  - first:
-      74: -7441002703186052147
-    second: LowerLeg|LowerLegAction
-  - first:
-      74: 2686109433136028074
-    second: LowerLeg|UpperLegAction
-  - first:
-      74: 2700097675373287856
-    second: UpperLeg|LowerLegAction
-  - first:
-      74: 303334280187774591
-    second: UpperLeg|UpperLegAction
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2

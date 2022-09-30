@@ -12,8 +12,10 @@ public class ClockCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.name == "Hitbox_Ground")
         {
+            Object.Destroy(GameObject.Find("Clock").transform.GetChild(2).gameObject);
             AudioManager.Instance.PlayOnce("ClockHit");
         }
     }

@@ -19,7 +19,8 @@ public class Clock : MonoBehaviour
 
         clock.AddComponent<Rigidbody>();
 
-        clock.GetComponent<Rigidbody>().mass = 100;
+        clock.GetComponent<Rigidbody>().mass = 10;
+        clock.GetComponent<Rigidbody>().drag = 0;
         clock.GetComponent<Rigidbody>().AddForce(Physics.gravity * 10);
         clock.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
     }
