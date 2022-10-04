@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private Animator animator;
+    private AudioManager audioManager;
 
     private Vector3 m_Input;
     private bool isFacingLeft = false;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        audioManager = AudioManager.Instance;
     }
 
     private void FixedUpdate()
@@ -66,10 +68,12 @@ public class PlayerController : MonoBehaviour
         {
             rb.MovePosition(transform.position + m_Input * Time.deltaTime * runSpeed);
             animator.SetBool("isRunning", true);
+            audioManager.Play("PlayerRun");
         }
         else
         {
             animator.SetBool("isRunning", false);
+            audioManager.StopPlay("PlayerRun");
         }
     }
 

@@ -5,9 +5,11 @@ using UnityEngine;
 public class GenerateLimb : MonoBehaviour
 {
     public float limbSpeed = 10f;
+    public float limbMass = 20f;
 
     public Rigidbody rb;
     public GameObject startingLimb;
+    public MeshCollider meshCollider;
     public Mesh[] limbMeshes = new Mesh[8];
     private GameObject player;
     private int limbAmount;
@@ -30,10 +32,19 @@ public class GenerateLimb : MonoBehaviour
         limbMesh = startingLimb.GetComponent<MeshFilter>();
 
         limbMesh.sharedMesh = limbMeshes[limbAmount];
+        meshCollider.sharedMesh = limbMeshes[limbAmount];
     }
 
     void ShootLimb()
     {
+        rb.mass = limbMass;
         rb.velocity = transform.right * limbSpeed;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        AudioManager.Instance.PlayOnce("LimbHit");
+    }
+
+
 }
