@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float runSpeed;
+    public GameObject interactIcon;
 
     private Rigidbody rb;
     private Animator animator;
@@ -16,13 +17,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // interactIcon.SetActive(false);
+
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         audioManager = AudioManager.Instance;
     }
 
     private void FixedUpdate()
-    {
+    {   
         GetInputs();
 
         CheckDirection();
@@ -78,5 +81,4 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
 }
