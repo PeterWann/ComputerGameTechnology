@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_Input;
     private bool isFacingLeft = false;
 
+    public bool freezePlayer = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +28,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {   
-        GetInputs();
+        if (!freezePlayer)
+        {
+            GetInputs();
 
-        CheckDirection();
+            CheckDirection();
 
-        Running();
+            Running();
+        }
     }
 
     #region Check Direction / Flip Player

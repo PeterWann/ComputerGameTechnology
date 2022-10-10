@@ -9,9 +9,9 @@ public class CodePanel : MonoBehaviour
     GameObject[] digits = new GameObject[4];
     [SerializeField]
     GameObject codeCheck;
-    string[] digitValue = new string[4];
-    string code = "6295";
-    string codeInput;
+    private readonly string[] digitValue = new string[4];
+    private readonly string code = "6295";
+    private string codeInput;
 
     private int counter = 0;
 
