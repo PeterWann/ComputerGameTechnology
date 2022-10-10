@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private Animator anim;
+    [SerializeField]
+    private GameObject pincode;
 
-    // Update is called once per frame
-    void Update()
+    public void OpenDoor()
     {
-        
+        pincode.GetComponent<Pincode>().HasInteracted();
+        anim.SetBool("DoorOpen", true);
     }
 }

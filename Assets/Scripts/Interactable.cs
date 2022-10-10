@@ -11,6 +11,7 @@ public abstract class Interactable : MonoBehaviour
     private GameObject player;
 
     private GameObject interactableIcon;
+    public bool hasInteracted = false;
 
     private void Reset()
     {
@@ -21,11 +22,11 @@ public abstract class Interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !hasInteracted)
         {
             Vector3 textPosition = new Vector3(
-                player.transform.position.x + 0.5f,
-                player.transform.position.y + 2,
+                this.transform.position.x,
+                this.transform.position.y - 0.5f,
                 -5);
             interactableIcon = Instantiate(interactableIconPrefab, textPosition, Quaternion.identity);
             interactableIcon.SetActive(true);
@@ -38,5 +39,11 @@ public abstract class Interactable : MonoBehaviour
         {
             Destroy(interactableIcon);
         }
+    }
+
+    public void HasInteracted()
+    {
+        hasInteracted = true;
+        Destroy(interactableIcon);
     }
 }

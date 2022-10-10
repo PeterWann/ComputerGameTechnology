@@ -9,6 +9,9 @@ public class CodePanel : MonoBehaviour
     GameObject[] digits = new GameObject[4];
     [SerializeField]
     GameObject codeCheck;
+
+    private GameObject door;
+
     private readonly string[] digitValue = new string[4];
     private readonly string code = "6295";
     private string codeInput;
@@ -18,6 +21,8 @@ public class CodePanel : MonoBehaviour
     private void Start()
     {
         codeCheck.GetComponent<TextMeshProUGUI>().text = "";
+        door = GameObject.Find("door");
+
         ResetDigits();
     }
 
@@ -73,6 +78,8 @@ public class CodePanel : MonoBehaviour
 
             if (codeInput == code)
             {
+                door.GetComponent<Door>().OpenDoor();
+
                 StartCoroutine(CodeCheckResult("CORRECT"));
             } else
             {
