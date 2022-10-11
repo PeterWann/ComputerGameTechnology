@@ -7,7 +7,6 @@ public class Pincode : Interactable
     private GameObject codePanelPrefab;
     [SerializeField]
     private GameObject playerObject;
-    
     private GameObject codePanelInteractable;
 
     private bool isPanelOpen = false;
@@ -29,6 +28,7 @@ public class Pincode : Interactable
     public override void Interact()
     {
         playerObject.GetComponent<PlayerController>().freezePlayer = true;
+
         Vector3 codePanelPosition = Camera.main.ScreenToWorldPoint(
             new Vector3(Screen.width / 2, Screen.height / 2, 10));
 

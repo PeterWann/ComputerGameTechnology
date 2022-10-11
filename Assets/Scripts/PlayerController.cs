@@ -28,14 +28,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {   
-        if (!freezePlayer)
-        {
-            GetInputs();
+        GetInputs();
 
-            CheckDirection();
+        CheckDirection();
 
-            Running();
-        }
+        Running();
     }
 
     #region Check Direction / Flip Player
@@ -72,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     void Running()
     {
-        if (m_Input.x != 0)
+        if (m_Input.x != 0 && !freezePlayer)
         {
             rb.MovePosition(transform.position + m_Input * Time.deltaTime * runSpeed);
             animator.SetBool("isRunning", true);
