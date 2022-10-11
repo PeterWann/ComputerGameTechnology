@@ -1126,7 +1126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1.17}
+  m_AnchoredPosition: {x: 0, y: -1.1700134}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1826147280776725530
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1826147280776725508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,7 +1208,6 @@ MonoBehaviour:
   - {fileID: 1826147280950568681}
   - {fileID: 1826147279743943220}
   codeCheck: {fileID: 1826147279712981905}
-  door: {fileID: 0}
 --- !u!1 &1826147280903219519
 GameObject:
   m_ObjectHideFlags: 0
