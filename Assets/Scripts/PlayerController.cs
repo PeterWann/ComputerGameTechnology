@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // interactIcon.SetActive(false);
-
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         audioManager = AudioManager.Instance;
@@ -39,11 +37,11 @@ public class PlayerController : MonoBehaviour
 
     void CheckDirection()
     {
-        if (m_Input.x < 0 && !isFacingLeft)
+        if (m_Input.x < 0 && !isFacingLeft && !freezePlayer)
         {
             Flip(-90);
         }
-        else if (m_Input.x > 0 && isFacingLeft)
+        else if (m_Input.x > 0 && isFacingLeft && !freezePlayer)
         {
             Flip(90);
         }

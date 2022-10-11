@@ -101,7 +101,7 @@ public class CodePanel : MonoBehaviour
        
         codeCheck.GetComponent<TextMeshProUGUI>().text = result;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         codeCheck.GetComponent<TextMeshProUGUI>().text = "";
     }
