@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float runSpeed;
+    public GameObject interactIcon;
 
     private Rigidbody rb;
     private Animator animator;
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 m_Input;
     private bool isFacingLeft = false;
+
+    public bool freezePlayer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {   
         GetInputs();
 
         CheckDirection();
@@ -34,11 +37,11 @@ public class PlayerController : MonoBehaviour
 
     void CheckDirection()
     {
-        if (m_Input.x < 0 && !isFacingLeft)
+        if (m_Input.x < 0 && !isFacingLeft && !freezePlayer)
         {
             Flip(-90);
         }
-        else if (m_Input.x > 0 && isFacingLeft)
+        else if (m_Input.x > 0 && isFacingLeft && !freezePlayer)
         {
             Flip(90);
         }
@@ -64,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     void Running()
     {
-        if (m_Input.x != 0)
+        if (m_Input.x != 0 && !freezePlayer)
         {
             rb.MovePosition(transform.position + m_Input * Time.deltaTime * runSpeed);
             animator.SetBool("isRunning", true);
@@ -78,5 +81,4 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
 }

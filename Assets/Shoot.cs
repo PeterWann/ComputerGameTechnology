@@ -20,14 +20,17 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        ShootAngle();
+            ShootAngle();
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            ShootLimb();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                if (!player.GetComponent<PlayerController>().freezePlayer)
+                {
+                    ShootLimb();
 
-            DecreaseMesh();
-        }
+                    DecreaseMesh();
+                }
+            }
     }
 
     void ShootAngle()

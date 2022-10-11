@@ -7,12 +7,6 @@ public class Spider : MonoBehaviour
     public GameObject splat;
     public GameObject spider;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         Instantiate(splat, splat.transform.position, splat.transform.rotation);
