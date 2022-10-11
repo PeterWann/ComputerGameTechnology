@@ -16,7 +16,7 @@ public class Pincode : Interactable
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!isPanelOpen && !hasInteracted)
+            if (!isPanelOpen && !hasInteracted && canInteract)
             {
                 Interact();
             } else

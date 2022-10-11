@@ -12,6 +12,7 @@ public abstract class Interactable : MonoBehaviour
 
     private GameObject interactableIcon;
     public bool hasInteracted = false;
+    public bool canInteract = false;
 
     private void Reset()
     {
@@ -24,6 +25,8 @@ public abstract class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasInteracted)
         {
+            canInteract = true;
+
             Vector3 textPosition = new Vector3(
                 this.transform.position.x,
                 this.transform.position.y - 0.5f,
@@ -37,6 +40,7 @@ public abstract class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            canInteract = false;
             Destroy(interactableIcon);
         }
     }
