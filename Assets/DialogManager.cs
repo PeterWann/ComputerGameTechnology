@@ -26,10 +26,9 @@ public class DialogManager : MonoBehaviour
         animator.speed = 0.3f;
     }
 
-
-    public void OnTriggerEnter()
+    public void OnTriggerEnter(Collider other)
     {
-        if (!dialogHasBeenTrigged)
+       if (!dialogHasBeenTrigged && other.name != "Limb(Clone)")
         {
             playerObject.GetComponent<PlayerController>().freezePlayer = true;
 

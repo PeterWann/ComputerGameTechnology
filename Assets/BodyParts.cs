@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class BodyParts : MonoBehaviour
 {
+    public static BodyParts Instance { get; private set; }
+
     private int bodyParts = 8;
     private int limbParts = 8;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        } else
+        {
+            Instance = this;
+        }
+    }
 
     public void DecreaseParts()
     {

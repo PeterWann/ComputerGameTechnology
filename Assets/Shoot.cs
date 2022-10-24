@@ -11,8 +11,7 @@ public class Shoot : MonoBehaviour
 
     private float shootAngle;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = GameObject.Find("Bob");
         playerMesh = GameObject.Find("BobMesh");
@@ -49,8 +48,9 @@ public class Shoot : MonoBehaviour
         if (limbsLeft > 0 )
         {
             firePoint.rotation = Quaternion.Euler(firePoint.rotation.x, firePoint.rotation.y, shootAngle);
+            limbPrefab.transform.localScale = player.transform.parent.transform.localScale;
             GameObject limb = Instantiate(limbPrefab, firePoint.position, firePoint.rotation);
-            Physics.IgnoreCollision(limb.GetComponent<Collider>(), player.GetComponent<Collider>());
+            Physics.IgnoreCollision(limb.GetComponent<Collider>(), player.GetComponent<CapsuleCollider>());
 
             player.GetComponent<BodyParts>().DecreaseLimbs();
         }
@@ -75,7 +75,6 @@ public class Shoot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.name.Contains("Limb(Clone)")) {
             Object.Destroy(other.gameObject);
             player.GetComponent<BodyParts>().IncreaseLimbsAndParts();

@@ -8,9 +8,17 @@ public class Door : MonoBehaviour
     private Animator anim;
     [SerializeField]
     private GameObject pincode;
+    [SerializeField]
+    private BoxCollider doorCollider;
+
+    private void Awake()
+    {
+        doorCollider.enabled = false;
+    }
 
     public void OpenDoor()
     {
+        doorCollider.enabled = true;
         pincode.GetComponent<Pincode>().HasInteracted();
         anim.SetBool("DoorOpen", true);
     }
