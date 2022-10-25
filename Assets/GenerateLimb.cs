@@ -11,14 +11,11 @@ public class GenerateLimb : MonoBehaviour
     public GameObject startingLimb;
     public MeshCollider meshCollider;
     public Mesh[] limbMeshes = new Mesh[8];
-    private GameObject player;
     private int limbAmount;
 
     private void Start()
     {
-        player = GameObject.Find("Bob");
-
-        limbAmount = player.GetComponent<BodyParts>().AmountLimbParts();
+        limbAmount = BodyParts.Instance.AmountBodyParts();
 
         ChooseLimb();
 
