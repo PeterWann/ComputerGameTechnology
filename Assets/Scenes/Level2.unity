@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394058693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.575937, y: -4.867127, z: -10.355855}
+  m_LocalPosition: {x: -21.90072, y: -4.867127, z: -10.355855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2377,9 +2377,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3350862970949081243}
   - component: {fileID: 3350862970949081245}
-  - component: {fileID: 3350862970949081246}
   - component: {fileID: 3350862970949081248}
   - component: {fileID: 3350862970949081247}
+  - component: {fileID: 3350862970949081249}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2547,19 +2547,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3350862970949081246
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723403108945117729}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 4.0282965, z: 0.8218648}
-  m_Center: {x: -1.2874181e-16, y: -0.16032171, z: -0.053440586}
 --- !u!95 &3350862970949081247
 Animator:
   serializedVersion: 4
@@ -2592,6 +2579,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a695e895319c0449025b610897b0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3350862970949081247}
+  enemyCollider: {fileID: 3350862970949081249}
+  player: {fileID: 1098948019}
+  rb: {fileID: 3350862970949081245}
+  hitpoints: 40
+  distanceToRun: 22
+  distanceToHit: 3.3
+--- !u!65 &3350862970949081249
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723403108945117729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.997823, z: 0.8776381}
+  m_Center: {x: 6.7021376e-17, y: -0.18353969, z: -0.061180964}
 --- !u!4 &3384599634012776457
 Transform:
   m_ObjectHideFlags: 0
