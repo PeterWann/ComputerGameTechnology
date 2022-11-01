@@ -60,13 +60,13 @@ public class Enemy : MonoBehaviour
 
         isHit = true;
 
-        yield return new WaitForSeconds(waitForHit);
-
         if (hitpoints <= 0) {
             EnemyDeath();
 
             isDead = true;
         }
+
+        yield return new WaitForSeconds(waitForHit);
 
         isHit = false;
     }
