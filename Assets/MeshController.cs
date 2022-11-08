@@ -8,8 +8,6 @@ public class MeshController : MonoBehaviour
     public Mesh[] bodyMeshes = new Mesh[8];
     private Animator animator;
 
-    private int bodyParts;
-
     private void Start()
     {
         animator = GameObject.Find("Bob").GetComponent<Animator>();
@@ -23,10 +21,10 @@ public class MeshController : MonoBehaviour
 
         bodyMesh.sharedMesh = bodyMeshes[bodyPart];
 
-        changeAnimation(bodyPart);
+        ChangeAnimation(bodyPart);
     }
 
-    public void changeAnimation(int bodyPart)
+    public void ChangeAnimation(int bodyPart)
     {
         if (bodyPart >= 4)
         {
