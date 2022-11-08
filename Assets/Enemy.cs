@@ -20,9 +20,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float distanceToHit = 3.3f;
     [SerializeField]
-    private float walkSpeed = 3f;
+    private float walkSpeed = 4f;
     [SerializeField]
-    private float runSpeed = 6f;
+    private float runSpeed = 8f;
     [SerializeField]
     private float waitForHit = 1f;
     private float calcDistance;
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     private bool isDead = false;
     private Vector3 moveLeft = new Vector3(-1f, 0, 0);
 
-    private void Update()
+    private void FixedUpdate()
     {
         calcDistance = Vector3.Distance(this.transform.position, player.transform.position);
         if (!isHit && !isDead) {
