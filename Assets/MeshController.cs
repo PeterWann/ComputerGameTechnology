@@ -7,6 +7,9 @@ public class MeshController : MonoBehaviour
     public GameObject startingMesh;
     public Mesh[] bodyMeshes = new Mesh[8];
     private Animator animator;
+    public Material[] playerHit = new Material[1];
+    public Material[] playerNotHit = new Material[1];
+    private SkinnedMeshRenderer bodyMesh;
 
     private void Start()
     {
@@ -15,13 +18,21 @@ public class MeshController : MonoBehaviour
 
     public void ChangeMesh(int bodyPart)
     {
-        SkinnedMeshRenderer bodyMesh;
-
         bodyMesh = startingMesh.GetComponent<SkinnedMeshRenderer>();
+
+        bodyMesh.materials = playerNotHit;
 
         bodyMesh.sharedMesh = bodyMeshes[bodyPart];
 
+
         ChangeAnimation(bodyPart);
+    }
+
+    public void PlayerHit()
+    {
+        bodyMesh = startingMesh.GetComponent<SkinnedMeshRenderer>();
+
+        bodyMesh.materials = playerHit;
     }
 
     public void ChangeAnimation(int bodyPart)

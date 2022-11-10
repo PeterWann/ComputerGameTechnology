@@ -12,6 +12,10 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private Rigidbody rb;
+    [SerializeField]
+    private CapsuleCollider playerHit;
+    [SerializeField]
+    private GameObject playerMesh;
 
     [SerializeField]
     private int hitpoints = 40;
@@ -28,10 +32,19 @@ public class Enemy : MonoBehaviour
     private float calcDistance;
     private bool isHit = false;
     private bool isDead = false;
+    private bool isHitting = false;
     private Vector3 moveLeft = new Vector3(-1f, 0, 0);
 
     private void FixedUpdate()
     {
+        if (isHitting)
+        {
+            playerHit.enabled = true;
+        } else
+        {
+            playerHit.enabled = false;
+        }
+
         calcDistance = Vector3.Distance(this.transform.position, player.transform.position);
         if (!isHit && !isDead) {
             if (calcDistance >= distanceToRun) {
@@ -55,6 +68,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        playerMesh.GetComponent<MeshController>().PlayerHit();
+    }
+
     IEnumerator EnemyHit() {
         hitpoints -= 20;
         anim.SetTrigger("IsHit");
@@ -70,6 +88,15 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(waitForHit);
 
         isHit = false;
+    }
+
+    IEnumerator PlayerHit()
+    {
+        isHitting = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        isHitting = false;
     }
 
     void EnemyDeath()
@@ -92,6 +119,8 @@ public class Enemy : MonoBehaviour
     void Boxing() {
         anim.SetBool("IsRunning", false);
         anim.SetTrigger("IsBoxing");
+
+        StartCoroutine(PlayerHit());
     }
 
 }

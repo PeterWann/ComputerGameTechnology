@@ -497,6 +497,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ca71cf205c2a73b42829d30a0d2c3961, type: 2}
+    - target: {fileID: 6020762586858088716, guid: 7ea7da4488455764b86a298843f0da88, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 048092a16cd362143880e803b8c31039, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ea7da4488455764b86a298843f0da88, type: 3}
 --- !u!1 &497739756
@@ -859,7 +863,7 @@ Transform:
   - {fileID: 497739757}
   - {fileID: 895459002}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705663512
 GameObject:
@@ -958,7 +962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4185360251243394296, guid: aba0805aa07abfc439a88ef2b3f90001, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4185360251243394296, guid: aba0805aa07abfc439a88ef2b3f90001, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1664,6 +1668,12 @@ MonoBehaviour:
   - {fileID: -44642716330487563, guid: eaeae700bbe8209449f1d6e34870e71c, type: 3}
   - {fileID: 8884383293734829407, guid: eaeae700bbe8209449f1d6e34870e71c, type: 3}
   - {fileID: -3223606048972116250, guid: 7ea7da4488455764b86a298843f0da88, type: 3}
+  playerHit:
+  - {fileID: 2100000, guid: 9479d848ddba92648a5312da267c43e1, type: 2}
+  - {fileID: 2100000, guid: 9479d848ddba92648a5312da267c43e1, type: 2}
+  playerNotHit:
+  - {fileID: 2100000, guid: 048092a16cd362143880e803b8c31039, type: 2}
+  - {fileID: 2100000, guid: 048092a16cd362143880e803b8c31039, type: 2}
 --- !u!1 &2069730256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,6 +2390,7 @@ GameObject:
   - component: {fileID: 3350862970949081248}
   - component: {fileID: 3350862970949081247}
   - component: {fileID: 3350862970949081249}
+  - component: {fileID: 3350862970949081250}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2583,6 +2594,8 @@ MonoBehaviour:
   enemyCollider: {fileID: 3350862970949081249}
   player: {fileID: 1098948019}
   rb: {fileID: 3350862970949081245}
+  playerHit: {fileID: 3350862970949081250}
+  playerMesh: {fileID: 2063604235}
   hitpoints: 40
   distanceToRun: 30
   distanceToHit: 3.3
@@ -2602,6 +2615,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.997823, z: 0.8776381}
   m_Center: {x: 6.7021376e-17, y: -0.18353969, z: -0.061180964}
+--- !u!136 &3350862970949081250
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723403108945117729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.21774152
+  m_Height: 0.43548316
+  m_Direction: 1
+  m_Center: {x: 4.3134306e-17, y: 0.97615045, z: 1.811168}
 --- !u!4 &3384599634012776457
 Transform:
   m_ObjectHideFlags: 0
