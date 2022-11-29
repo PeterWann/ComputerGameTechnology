@@ -9,6 +9,8 @@ public class BodyParts : MonoBehaviour
     private int bodyParts = 8;
     private int limbParts = 8;
 
+    public bool powerUpActivated;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -18,28 +20,43 @@ public class BodyParts : MonoBehaviour
         {
             Instance = this;
         }
+
+        powerUpActivated = false;
     }
 
     public void DecreaseParts()
     {
-        if (bodyParts >= 1)
+        if (!powerUpActivated)
         {
-            bodyParts -= 1;
+            if (bodyParts >= 1)
+            {
+                bodyParts -= 1;
+            }
         }
     }
 
     public void DecreaseLimbs()
     {
-        if (limbParts >= 1)
+        if (!powerUpActivated)
         {
-            limbParts -= 1;
+            if (limbParts >= 1)
+            {
+                limbParts -= 1;
+            }
         }
+       
     }
 
     public void IncreaseLimbsAndParts()
     {
-        bodyParts += 1;
-        limbParts += 1;
+        if (!powerUpActivated)
+        {
+            if (bodyParts < 8 && limbParts < 8)
+            {
+                bodyParts += 1;
+                limbParts += 1;
+            }
+        }
     }
 
     public int AmountBodyParts()
