@@ -78,7 +78,7 @@ public class Shoot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name.Contains("Limb")) {
+        if (other.name.Contains("Limb(Clone)")) {
             Object.Destroy(other.gameObject);
             player.GetComponent<BodyParts>().IncreaseLimbsAndParts();
 
