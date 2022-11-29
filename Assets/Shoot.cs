@@ -53,7 +53,6 @@ public class Shoot : MonoBehaviour
             Physics.IgnoreCollision(limb.GetComponent<Collider>(), player.GetComponent<CapsuleCollider>());
 
             player.GetComponent<BodyParts>().DecreaseLimbs();
-            
         }
     }
 
@@ -61,9 +60,7 @@ public class Shoot : MonoBehaviour
     {
         if (player.GetComponent<BodyParts>().AmountBodyParts() > 0)
         {
-            
             player.GetComponent<BodyParts>().DecreaseParts();
-          
 
             playerMesh.GetComponent<MeshController>().ChangeMesh(player.GetComponent<BodyParts>().AmountBodyParts());
         }
