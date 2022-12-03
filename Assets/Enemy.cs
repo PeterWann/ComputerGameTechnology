@@ -48,19 +48,12 @@ public class Enemy : MonoBehaviour
     {
         if (collision.collider.name == "Limb(Clone)")
         {
+            collision.collider.name = "Limb(NoNeed)";
+
             StartCoroutine(EnemyHit());
             // Only first hit, ignore rest.
 
             Physics.IgnoreCollision(collision.collider, GetComponent<BoxCollider>());
-
-            foreach (BoxCollider collider in enemyColliders)
-            {
-                if (collider)
-                {
-                    Physics.IgnoreCollision(collision.collider, collider);
-                }
-            }
-            
         }
     }
 
