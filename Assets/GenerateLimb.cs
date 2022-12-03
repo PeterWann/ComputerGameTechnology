@@ -28,8 +28,6 @@ public class GenerateLimb : MonoBehaviour
 
         limbMesh = startingLimb.GetComponent<MeshFilter>();
 
-        Debug.Log(limbMesh.name);
-
         limbMesh.sharedMesh = limbMeshes[limbAmount];
         meshCollider.sharedMesh = limbMeshes[limbAmount];
     }
