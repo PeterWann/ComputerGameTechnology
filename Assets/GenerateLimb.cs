@@ -15,7 +15,7 @@ public class GenerateLimb : MonoBehaviour
 
     private void Start()
     {
-        limbAmount = BodyParts.Instance.AmountBodyParts();
+        limbAmount = BodyParts.Instance.AmountLimbParts();
 
         ChooseLimb();
 
