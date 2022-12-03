@@ -7,7 +7,7 @@ public class BodyParts : MonoBehaviour
     public static BodyParts Instance { get; private set; }
 
     private int bodyParts = 8;
-    private int limbParts = 8;
+    private int limbParts = 7;
 
     public bool powerUpActivated;
 
