@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Animator anim;
     [SerializeField]
-    private BoxCollider enemyCollider;
+    private BoxCollider[] enemyColliders = new BoxCollider[2];
     [SerializeField]
     private GameObject player;
     [SerializeField]
@@ -50,7 +50,17 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(EnemyHit());
             // Only first hit, ignore rest.
-            Physics.IgnoreCollision(collision.collider, enemyCollider);
+
+            Physics.IgnoreCollision(collision.collider, GetComponent<BoxCollider>());
+
+            foreach (BoxCollider collider in enemyColliders)
+            {
+                if (collider)
+                {
+                    Physics.IgnoreCollision(collision.collider, collider);
+                }
+            }
+            
         }
     }
 
@@ -74,7 +84,7 @@ public class Enemy : MonoBehaviour
     void EnemyDeath()
     {
         Destroy(rb);
-        Destroy(enemyCollider);
+        Destroy(GetComponent<BoxCollider>());
         anim.SetBool("IsDead", true);
     }
 
