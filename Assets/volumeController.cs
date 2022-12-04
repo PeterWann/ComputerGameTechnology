@@ -11,6 +11,12 @@ public class volumeController : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("VolumeSet") == 0)
+        {
+            PlayerPrefs.SetFloat("VolumeValue", AudioListener.volume);
+            PlayerPrefs.SetInt("VolumeSet", 1);
+        }
+
         LoadValues();
     }
 
