@@ -82,6 +82,7 @@ public class DialogManager : MonoBehaviour
     void EndDialog()
     {
         animator.SetBool("IsOpen", false);
+        Destroy(this);
         playerObject.GetComponent<PlayerController>().freezePlayer = false;
     }
 
